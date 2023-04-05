@@ -14,7 +14,8 @@
   --shadows: #2e2f42;
   --overlays: #2e2f42;
   --overlay: #2e2f42;
-  --hero-image-bg: #2e2f42;
+  --footer-image-bg: #2e2f42;
+  --hero-image-bg: rgba(46, 47, 66, 0.7);
 
   --success-messages: #31d0aa;
 
@@ -39,6 +40,7 @@
   --team-card-bg: #ffffff;
 
   --bg-grad: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
+  --trans-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /**                         Gallary                 */
 
@@ -158,7 +160,7 @@ body {
   height: 40px;
   border-radius: 50%;
   background-color: var(--ctas);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--trans-dur-and-func);
 }
 
 .ikon-bg:is(:hover, :focus) {
@@ -222,7 +224,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   top: 0px;
   padding: 24px 24px 40px 40px;
   width: 100vw;
@@ -353,7 +355,7 @@ body {
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   background-color: var(--ctas);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--trans-dur-and-func);
 }
 
 .hero-button:is(:hover, :focus) {
@@ -457,14 +459,14 @@ body {
   height: 88px;
   border: 1px solid var(--deemphasized-text);
   border-radius: 4px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border var(--trans-dur-and-func);
 }
 
 .customers-ikon {
   width: 104px;
   height: 56px;
   fill: var(--deemphasized-text);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--trans-dur-and-func);
 }
 
 .customers-link:is(:hover, :focus) {
@@ -503,8 +505,9 @@ body {
   border: 1px solid var(--accent-color);
   border-radius: 4px;
   cursor: pointer;
-  transition: color, background-color,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--trans-dur-and-func),
+    background-color var(--trans-dur-and-func),
+    box-shadow var(--trans-dur-and-func);
 }
 
 .filter-btn:is(:hover, :focus) {
@@ -524,7 +527,7 @@ body {
   --carts: 1;
   border: 1px solid var(--light-mode-bg);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--trans-dur-and-func);
 }
 
 .project-card-item:is(:hover, :focus) {
@@ -549,7 +552,7 @@ body {
   color: var(--light-mode-dialogs);
   background-color: var(--active-states);
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--trans-dur-and-func);
 }
 
 .project-card-box {
@@ -560,7 +563,7 @@ body {
 
 .footer {
   padding: 96px 0;
-  background-color: var(--hero-image-bg);
+  background-color: var(--footer-image-bg);
 }
 
 .footer-offer {
@@ -596,7 +599,7 @@ body {
 }
 
 .footer-bg {
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--trans-dur-and-func);
 }
 
 .footer-bg:is(:hover, :focus) {
@@ -656,7 +659,7 @@ body {
   border-radius: 4px;
   border: none;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--trans-dur-and-func);
 }
 
 .footer-btn:is(:hover, :focus) {
@@ -671,7 +674,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--backdrop);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--trans-dur-and-func);
 }
 
 .backdrop.is-hidden .modal {
@@ -680,6 +683,7 @@ body {
 
 .modal {
   position: absolute;
+  z-index: 100;
   padding: 24px;
   top: 50%;
   left: 50%;
@@ -690,7 +694,7 @@ body {
   border-radius: 4px;
   background: var(--modal-bg);
   transform: translate(-50%, -50%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--trans-dur-and-func);
 }
 
 .is-hidden {
@@ -711,14 +715,14 @@ body {
   border-radius: 50%;
   background-color: var(--subtle-bg);
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--trans-dur-and-func);
 }
 
 .close-btn-ikon {
   width: 8px;
   height: 8px;
   fill: var(--overlays);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--trans-dur-and-func);
 }
 
 .close-btn:is(:hover, :focus) {
@@ -749,7 +753,7 @@ body {
   border: 1px solid rgba(46, 47, 66, 0.2);
   border-radius: 4px;
   background-color: transparent;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--trans-dur-and-func);
 }
 
 .modal-ikon {
@@ -760,7 +764,7 @@ body {
   width: 18px;
   height: 24px;
   fill: var(--overlays);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--trans-dur-and-func);
 }
 
 .modal-subtitle {
@@ -793,7 +797,7 @@ body {
   border-radius: 4px;
   background-color: transparent;
   resize: none;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--trans-dur-and-func);
 }
 
 .modal-textarea:is(:hover, :focus) {
@@ -831,7 +835,7 @@ body {
   border: 1px solid rgba(46, 47, 66, 0.2);
   border-radius: 2px;
   margin-right: 8px;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--trans-dur-and-func);
 }
 
 .check-text > span:is(:hover, :focus) {
@@ -865,7 +869,7 @@ body {
   border-radius: 4px;
   border: none;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--trans-dur-and-func);
 }
 
 .modal-btn:is(:hover, :focus) {
@@ -944,7 +948,7 @@ body {
 
   .normal {
     color: var(--headings);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--trans-dur-and-func);
   }
 
   .normal:is(:hover, :focus),
@@ -985,7 +989,7 @@ body {
     text-decoration: none;
     font-style: normal;
     color: var(--body-text);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--trans-dur-and-func);
   }
 
   .contact:is(:hover, :focus) {
